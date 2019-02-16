@@ -1,0 +1,35 @@
+App\Entity\Subscription:
+  subscription_{0..3}:
+    name: <word()>
+    slogan: <sentence()>
+    url: <url()>
+
+App\Entity\User:
+  user_admin:
+    firstname: <firstname()>
+    lastname: <lastname()>
+    email: <email()>
+    address: <address()>
+    apiKey: abc123
+    roles: [ROLE_USER,ROLE_ADMIN]
+    country: <country()>
+    subscription: '@subscription_*'
+
+
+  user_{1..10}:
+    firstname: <firstname()>
+    lastname: <lastname()>
+    email: <email()>
+    address: <address()>
+    country: <country()>
+    subscription: '@subscription_*'
+
+
+App\Entity\Card:
+  card_{1..50}:
+    name: My card
+    creditCardType: <creditCardType()>
+    currencyCode: <currencyCode()>
+    creditCardNumber: <creditCardNumber()>
+    value: <numberBetween(0,100000)>
+    user: '@user_*'
