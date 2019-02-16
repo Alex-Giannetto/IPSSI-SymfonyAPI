@@ -8,6 +8,16 @@ Vous trouverez l'énoncé avec ma progression ainsi qu'un export postman de ce q
 
 doc : [http://localhost/api/doc](http://localhost/api/doc)
 
+
+## installation:
+```bash
+git clone https://github.com/Alexg78bis/IPSSI-SymfonyAPI
+cd IPSSI-SymfonyAPI
+composer install
+docker-compose exec web php bin/console d:s:u --force
+docker-compose exec web php bin/console hautelook:fixtures:load --purge-with-truncate
+```
+
 ## commandes :
 - fixtures: 
 ```bash
